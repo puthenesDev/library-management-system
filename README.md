@@ -61,6 +61,12 @@ LibraryManagement/
 - PUT `/api/loans/{id}` — update loan due date
 - DELETE `/api/loans/{id}` — delete loan
 
+## Database Design
+
+The system consists of four main entities: Libraries, Books, Members, and Loans. Below is the ER diagram showing their relationships:
+
+![ER Diagram](docs/er-diagram.png)
+
 ## 🧪 Testing
 Run tests: `dotnet test`
 
