@@ -13,7 +13,7 @@ public class ReturnBookCommandHandlerTests
     {
         // Arrange
         var libraryId = Guid.NewGuid();
-        var book = new Book("1234567890", "Title", "Author", 1, libraryId);
+        var book = new Book("Isbn_1", "Title_1", "Author_1", 1, libraryId);
         book.Borrow(); 
 
         var loan = new Loan(book.Id, Guid.NewGuid(), DateTime.UtcNow, TimeSpan.FromDays(14));

@@ -20,14 +20,14 @@ public class CreateLibraryCommandHandlerTests
 
         var handler = new CreateLibraryCommandHandler(repoMock.Object);
 
-        var cmd = new CreateLibraryCommand("Central Library", "Main Street");
+        var cmd = new CreateLibraryCommand("National Library", "City Centre");
 
         // Act
         LibraryResponse response = await handler.Handle(cmd, CancellationToken.None);
 
         // Assert
         Assert.NotNull(response);
-        Assert.Equal("Central Library", response.Name);
+        Assert.Equal("National Library", response.Name);
         repoMock.Verify(r => r.AddAsync(It.IsAny<Library>(), It.IsAny<CancellationToken>()), Times.Once);
     }
 }

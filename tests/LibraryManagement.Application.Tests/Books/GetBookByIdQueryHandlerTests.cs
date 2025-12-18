@@ -11,7 +11,7 @@ public class GetBookByIdQueryHandlerTests
     public async Task Handle_Should_ReturnBook_WhenExists()
     {
         // Arrange
-        var book = new Book("1234567890", "Title", "Author", 1, Guid.NewGuid());
+        var book = new Book("Isbn_1", "Title_1", "Peter", 1, Guid.NewGuid());
 
         var bookRepoMock = new Mock<IBookRepository>();
         bookRepoMock
@@ -26,7 +26,7 @@ public class GetBookByIdQueryHandlerTests
         // Assert
         Assert.NotNull(result);
         Assert.Equal(book.Id, result!.Id);
-        Assert.Equal("Title", result.Title);
+        Assert.Equal("Title_1", result.Title);
 
         // Assert
         bookRepoMock.Verify(r => r.GetByIdAsync(book.Id, It.IsAny<CancellationToken>()), Times.Once);

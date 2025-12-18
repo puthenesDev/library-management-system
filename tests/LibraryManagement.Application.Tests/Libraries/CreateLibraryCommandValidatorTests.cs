@@ -8,7 +8,7 @@ public class CreateLibraryCommandValidatorTests
     public void Should_Fail_When_NameEmpty()
     {
         var validator = new CreateLibraryCommandValidator();
-        var cmd = new CreateLibraryCommand("", "Main Street");
+        var cmd = new CreateLibraryCommand("", "City Centre");
 
         var result = validator.Validate(cmd);
         Assert.False(result.IsValid);
@@ -18,7 +18,7 @@ public class CreateLibraryCommandValidatorTests
     public void Should_Fail_When_AddressEmpty()
     {
         var validator = new CreateLibraryCommandValidator();
-        var cmd = new CreateLibraryCommand("Central Library", "");
+        var cmd = new CreateLibraryCommand("National Library", "");
 
         var result = validator.Validate(cmd);
         Assert.False(result.IsValid);
@@ -28,7 +28,7 @@ public class CreateLibraryCommandValidatorTests
     public void Should_Pass_When_Valid()
     {
         var validator = new CreateLibraryCommandValidator();
-        var cmd = new CreateLibraryCommand("Central Library", "Main Street");
+        var cmd = new CreateLibraryCommand("National Library", "City Centre");
 
         var result = validator.Validate(cmd);
         Assert.True(result.IsValid);

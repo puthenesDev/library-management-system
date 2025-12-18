@@ -13,8 +13,8 @@ public class BorrowBookCommandHandlerTests
     {
         // Arrange
         var libraryId = Guid.NewGuid();
-        var book = new Book("1234567890", "Title", "Author", 1, libraryId);
-        var member = new Member("Alice", "alice@example.com");
+        var book = new Book("Isbn_1", "Title1", "Author_1", 1, libraryId);
+        var member = new Member("David", "david@gmail.com");
 
         var bookRepoMock = new Mock<IBookRepository>();
         bookRepoMock

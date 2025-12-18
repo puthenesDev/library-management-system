@@ -15,7 +15,7 @@ This project demonstrates domain-driven design, repository pattern, and unit tes
 - Entity Framework Core
 - CQRS + MediatR
 - xUnit + Moq
-- PostGres SQL
+- PostgreSQL
 
 ## 📂 Project Structure
 LibraryManagement/ 
@@ -24,6 +24,8 @@ LibraryManagement/
 ├── Infrastructure/ # EF Core DbContext & repository implementations 
 ├── Api/ # Controllers (REST endpoints) 
 └── Tests/ # Unit tests with Moq
+└── src/ ├── database/ # SQL scripts for schema & seed data 
+└── Postman/ # Postman collection for API testing
 
 ## ⚡ How to Run
 1. `dotnet restore`
@@ -62,8 +64,5 @@ LibraryManagement/
 ## 🧪 Testing
 Run tests: `dotnet test`
 
-## 📌 Notes
-This repo is an assessment project showcasing clean architecture and testing practices.
-
 ## 👨‍💻 Author
-Built by Putheneswaran. Interview-ready.
+Built by Putheneswaran.

@@ -8,7 +8,7 @@ public class CreateBookCommandValidatorTests
     public void Should_Fail_When_TitleEmpty()
     {
         var validator = new CreateBookCommandValidator();
-        var cmd = new CreateBookCommand(Guid.NewGuid(), "1234567890", "", "Author", 1);
+        var cmd = new CreateBookCommand(Guid.NewGuid(), "Isbn1", "", "Peter", 1);
 
         var result = validator.Validate(cmd);
         Assert.False(result.IsValid);
@@ -18,7 +18,7 @@ public class CreateBookCommandValidatorTests
     public void Should_Pass_When_Valid()
     {
         var validator = new CreateBookCommandValidator();
-        var cmd = new CreateBookCommand(Guid.NewGuid(), "1234567890", "Title", "Author", 1);
+        var cmd = new CreateBookCommand(Guid.NewGuid(), "Isbn123456789", "Title", "Peter", 1);
 
         var result = validator.Validate(cmd);
         Assert.True(result.IsValid);

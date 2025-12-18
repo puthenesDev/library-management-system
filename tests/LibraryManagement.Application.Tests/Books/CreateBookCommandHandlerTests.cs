@@ -11,7 +11,7 @@ public class CreateBookCommandHandlerTests
     public async Task Handle_Should_AddBook_When_LibraryExists()
     {
         // Arrange
-        var library = new Library("Central", "Main Street");
+        var library = new Library("National Library", "City Centre");
 
         var libraryRepoMock = new Mock<ILibraryRepository>();
         libraryRepoMock
@@ -28,14 +28,14 @@ public class CreateBookCommandHandlerTests
             .Returns(Task.CompletedTask);
 
         var handler = new CreateBookCommandHandler(libraryRepoMock.Object, bookRepoMock.Object);
-        var cmd = new CreateBookCommand(library.Id, "1234567890", "Title", "Author", 2);
+        var cmd = new CreateBookCommand(library.Id, "Isbn_1", "Title_1", "Author", 2);
 
         // Act
         BookResponse response = await handler.Handle(cmd, CancellationToken.None);
 
         // Assert
         Assert.NotNull(response);
-        Assert.Equal("Title", response.Title);
+        Assert.Equal("Title_1", response.Title);
 
         bookRepoMock.Verify(r => r.AddAsync(It.IsAny<Book>(), It.IsAny<CancellationToken>()), Times.Once);
         bookRepoMock.Verify(r => r.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);

@@ -14,8 +14,8 @@ public class GetBooksQueryHandlerTests
         // Arrange
         var books = new List<Book>
         {
-            new Book("1234567890", "Title1", "Author1", 1, Guid.NewGuid()),
-            new Book("0987654321", "Title2", "Author2", 2, Guid.NewGuid())
+            new Book("Isbn_1", "Title1", "Author1", 1, Guid.NewGuid()),
+            new Book("Isbn_2", "Title2", "Author2", 2, Guid.NewGuid())
         };
 
         var bookRepoMock = new Mock<IBookRepository>();

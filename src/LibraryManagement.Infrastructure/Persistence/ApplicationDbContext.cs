@@ -50,7 +50,7 @@ public class ApplicationDbContext : DbContext
         ConfigureLoan(modelBuilder.Entity<Loan>());
     }
 
-    private void ConfigureLoan(EntityTypeBuilder<Loan> builder)
+    private static void ConfigureLoan(EntityTypeBuilder<Loan> builder)
     {
         builder.HasKey(l => l.Id);
 

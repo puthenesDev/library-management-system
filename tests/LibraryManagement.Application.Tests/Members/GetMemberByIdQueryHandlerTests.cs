@@ -12,7 +12,7 @@ public class GetMemberByIdQueryHandlerTests
     public async Task Handle_Should_ReturnMember_WhenExists()
     {
         // Arrange
-        var member = new Member("Alice", "alice@example.com");
+        var member = new Member("David", "david@gmail.com");
 
         var repoMock = new Mock<IMemberRepository>();
         repoMock

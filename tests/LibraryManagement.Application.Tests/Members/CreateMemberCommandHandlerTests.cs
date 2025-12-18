@@ -24,14 +24,14 @@ public class CreateMemberCommandHandlerTests
 
         var handler = new CreateMemberCommandHandler(repoMock.Object);
 
-        var cmd = new CreateMemberCommand("Alice", "alice@example.com");
+        var cmd = new CreateMemberCommand("David", "david@gmail.com");
 
         // Act
         MemberResponse response = await handler.Handle(cmd, CancellationToken.None);
 
         // Assert
         Assert.NotNull(response);
-        Assert.Equal("Alice", response.Name);
+        Assert.Equal("David", response.Name);
 
         repoMock.Verify(r => r.AddAsync(It.IsAny<Member>(), It.IsAny<CancellationToken>()), Times.Once);
         repoMock.Verify(r => r.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
