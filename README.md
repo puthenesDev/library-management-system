@@ -63,9 +63,13 @@ LibraryManagement/
 
 ## Database Design
 
-The system consists of four main entities: Libraries, Books, Members, and Loans. Below is the ER diagram showing their relationships:
+Database Relationships
 
-![ER Diagram](docs/er-diagram.png)
+Libraries 1 → ∞ Books (One library can have many books. If a library is deleted, its books are also deleted.)
+
+Members 1 → ∞ Loans (One member can have many loan records. A member cannot be deleted if they have existing loans.)
+
+Books 1 → ∞ Loans (One book can be loaned out many times. A book cannot be deleted if it has a loan history.)
 
 ## 🧪 Testing
 Run tests: `dotnet test`
